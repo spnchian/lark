@@ -2,10 +2,13 @@ package factory;
 
 import dao.SettingDao;
 import dao.TypedSettingKeyDao;
+import domain.DataType;
 import domain.InvalidSettingException;
 import domain.Property;
 import domain.Setting;
 import domain.TypedSettingKey;
+
+import java.util.List;
 
 public class SettingFactory {
 
@@ -31,4 +34,10 @@ public class SettingFactory {
             throw new InvalidSettingException("Specified value invalid for keyName");
         }
     }
+
+    public TypedSettingKey createTypedSettingKey(String keyName, DataType dataType, List<Property> properties){
+        return new TypedSettingKey(dataType,properties, keyName);
+    }
+
+    
 }
