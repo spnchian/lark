@@ -3,6 +3,9 @@ package domain;
 @Document(collection=settings)
 public class Setting<T> {
 
+    @Id
+    ObjectID id;
+
     private String key;
 
     private T value;

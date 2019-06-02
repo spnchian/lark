@@ -4,6 +4,9 @@ import java.util.List;
 @Document(collection=typedSettingKeys)
 public class TypedSettingKey {
 
+    @ObjectId
+    ObjectID id;
+
     private DataType dataType;
 
     private List<Property> properties;
