@@ -10,12 +10,18 @@ import domain.TypedSettingKey;
 
 import java.util.List;
 
+@Component
 public class SettingFactory {
 
     TypedSettingKeyDao typedSettingKeyDao;
 
     SettingDao settingDao;
 
+
+    public SettingFactory(TypedSettingKeyDao typedSettingKeyDao, SettingDao settingDao){
+        this.typedSettingKeyDao = typedSettingKeyDao;
+        this.settingDao = settingDao;
+    }
 
     public <T> boolean validateSetting(String keyName, T value){
         TypedSettingKey typedSettingKey = typedSettingKeyDao.get(keyName);
@@ -39,5 +45,5 @@ public class SettingFactory {
         return new TypedSettingKey(dataType,properties, keyName);
     }
 
-    
+
 }
