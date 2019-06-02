@@ -1,7 +1,7 @@
 package domain;
 
 import java.util.List;
-
+@Document(collection=typedSettingKeys)
 public class TypedSettingKey {
 
     private DataType dataType;

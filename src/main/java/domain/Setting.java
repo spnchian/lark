@@ -1,5 +1,6 @@
 package domain;
 
+@Document(collection=settings)
 public class Setting<T> {
 
     private String key;
